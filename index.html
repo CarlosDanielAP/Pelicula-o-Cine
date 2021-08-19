@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cine o Casa</title>
+</head>
+<body>
+    <header>
+        <div>
+            <p>
+                Cine or Home
+            </p>
+        </div>
+    </header>
+
+    <section>
+        <h2>Cuantas peliculas planeas ver en el mes</h2>
+        <input id="PeliculasPorMes" type="number"  min="1" max="8">
+        <h2>Cuantas Personas contandote a ti van a ver la pelicula?</h2>
+        <input id="PersonasPorPelicula" type="number">
+        
+    </section>
+
+    <section>
+        
+        <button type="button" onclick="guardarPelicula()">Elegir peliculas</button>
+    </section>
+
+    <section>
+        
+            <input type="checkbox" id="cb1" class="check" onclick="return contarPeliculas()">
+              <label for="cb1"><img src="http://lorempixel.com/100/100" /></label>
+         
+           <input type="checkbox" id="cb2"class="check" onclick="return contarPeliculas()" >
+              <label for="cb2"><img src="http://lorempixel.com/101/101" /></label>
+        
+            <input type="checkbox" id="cb3" class="check" onclick="return contarPeliculas()">
+              <label for="cb3"><img src="http://lorempixel.com/102/102" /></label>
+           
+           <input type="checkbox" id="cb4" class="check" onclick="return contarPeliculas()" >
+              <label for="cb4"><img src="http://lorempixel.com/103/103" /></label>
+              
+            <input type="checkbox" id="cb5" class="check" onclick="return contarPeliculas()" >
+              <label for="cb5"><img src="http://lorempixel.com/103/103" /></label>
+
+              <input type="checkbox" id="cb6" class="check" onclick="return contarPeliculas()" >
+              <label for="cb6"><img src="http://lorempixel.com/103/103" /></label>
+
+              <input type="checkbox" id="cb7" class="check" onclick="return contarPeliculas()" >
+              <label for="cb7"><img src="http://lorempixel.com/103/103" /></label>
+
+              <input type="checkbox" id="cb8" class="check" onclick="return contarPeliculas()" >
+              <label for="cb8"><img src="http://lorempixel.com/103/103" /></label>
+            
+         
+    </section>
+
+    <script src="/Pelicula-o-Cine/peliculas.js"></script>
+</body>
+</html>
