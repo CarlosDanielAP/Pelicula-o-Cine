@@ -15,23 +15,32 @@ const netflixStream = new plataformaPrecio("netflix", 266);
 const amazonStream = new plataformaPrecio("amazon", 99);
 const disneyStream = new plataformaPrecio("disney", 159);
 class peliculaCartelera {
-  constructor(id, nombre, precio, plataforma, cine) {
+  constructor(id, nombre, precio, plataforma, cine,imagen) {
     this.id = id;
     this.nombre = nombre;
     this.precio = precio;
     this.plataforma = plataforma;
     this.cine = cine;
+    this.imagen=imagen;
   }
 }
 
-const peli1 = new peliculaCartelera("peli1", "batman", 32, netflixStream, false);
-const peli2 = new peliculaCartelera("peli2", "batman", 42, amazonStream, false);
-const peli3 = new peliculaCartelera("peli3", "batman", 32, netflixStream, false);
-const peli4 = new peliculaCartelera("peli4", "batman", 32, hboStream, false);
-const peli5 = new peliculaCartelera("peli5", "batman", 32, amazonStream, false);
-const peli6 = new peliculaCartelera("peli6", "batman", 52, netflixStream, false);
-const peli7 = new peliculaCartelera("peli7", "batman", 32, disneyStream, false);
-const peli8 = new peliculaCartelera("peli8", "batman", 32, netflixStream, false);
+const peli1 = new peliculaCartelera("peli1", "vivo", 32, netflixStream, false,"/Pelicula-o-Cine/img/vivo.jpg");
+document.getElementById("img1").src=peli1.imagen;
+const peli2 = new peliculaCartelera("peli2", "spiderman", 42, amazonStream, false,"/Pelicula-o-Cine/img/spider.jpg");
+document.getElementById("img2").src=peli2.imagen;
+const peli3 = new peliculaCartelera("peli3", "familia", 32, netflixStream, false,"/Pelicula-o-Cine/img/familia_mitchell.jpg");
+document.getElementById("img3").src=peli3.imagen;
+const peli4 = new peliculaCartelera("peli4", "readyPlayer", 32, hboStream, false,"/Pelicula-o-Cine/img/readyPlayer.jpg");
+document.getElementById("img4").src=peli4.imagen;
+const peli5 = new peliculaCartelera("peli5", "rango", 32, amazonStream, false,"/Pelicula-o-Cine/img/rango.jpg");
+document.getElementById("img5").src=peli5.imagen;
+const peli6 = new peliculaCartelera("peli6", "dragon", 52, netflixStream, false,"/Pelicula-o-Cine/img/dragon.jpg");
+document.getElementById("img6").src=peli6.imagen;
+const peli7 = new peliculaCartelera("peli7", "luca", 32, disneyStream, false,"/Pelicula-o-Cine/img/luca.jpg");
+document.getElementById("img7").src=peli7.imagen;
+const peli8 = new peliculaCartelera("peli8", "nextgen", 32, netflixStream, false,"/Pelicula-o-Cine/img/next_gen.jpg");
+document.getElementById("img8").src=peli8.imagen;
 
 const cartelera = [peli1, peli2, peli3, peli4, peli5, peli6, peli7, peli8];
 
