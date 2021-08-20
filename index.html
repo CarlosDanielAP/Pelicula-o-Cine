@@ -14,22 +14,8 @@
             </p>
         </div>
     </header>
-
-    <section>
-        <h2>Cuantas peliculas planeas ver en el mes</h2>
-        <input id="PeliculasPorMes" type="number"  min="1" max="8">
-        <h2>Cuantas Personas contandote a ti van a ver la pelicula?</h2>
-        <input id="PersonasPorPelicula" min="1" value="1" type="number">
-        
-    </section>
-
-    <section>
-        
-        <button type="button" onclick="guardarPelicula()">Elegir peliculas</button>
-    </section>
-
-    <section>
-        
+<section>
+        <h2>Elige las peliculas que quieres ver este mes</h2>
             <input type="checkbox" id="peli1" class="check" onclick="return contarPeliculas()">
               <label for="peli1"><img src="http://lorempixel.com/100/100" /></label>
          
@@ -56,8 +42,16 @@
             
          
     </section>
-
     <section>
+        
+        <h2>Cuantas Personas contandote a ti van a ver la pelicula?</h2>
+        <input id="PersonasPorPelicula" min="1" value="1" type="number">
+        <button type="button" onclick="guardarPelicula()">Elegir peliculas</button>
+    </section>
+
+    
+
+    <section id="costos">
         <p id="CostoPorPersona"></p>
         <p id="CostoPorPlataforma"></p>
     </section>

@@ -1,5 +1,4 @@
-let numeroPeliculas = 0;
-let personasPelicula = 0;
+let personasPelicula = 1;
 const textCostoPorPersona = document.getElementById("CostoPorPersona");
 const textCostoPorPlataforma = document.getElementById("CostoPorPlataforma");
 
@@ -39,25 +38,16 @@ const cartelera = [peli1, peli2, peli3, peli4, peli5, peli6, peli7, peli8];
 
 
 function guardarPelicula() {
-  textCostoPorPersona.innerText = null;
-  textCostoPorPlataforma.innerText = null;
-  const checkboxes = Array.from(document.getElementsByClassName("check"));
-  checkboxes.forEach((element) => (element.checked = false));
 
-  const textPeliculas = document.getElementById("PeliculasPorMes");
-  numeroPeliculas = textPeliculas.value;
   const textPersonas = document.getElementById("PersonasPorPelicula");
   personasPelicula = textPersonas.value;
 
-  if (numeroPeliculas > 8) {
-    window.alert("por el momento solo tenemos 8 peliculas disponibles");
-    numeroPeliculas = 0;
-    textPeliculas.value = 0;
-  }
+
   if (personasPelicula == 0) {
     personasPelicula = 1;
     textPersonas.value = 1;
   }
+  contarPeliculas();
 }
 
 function contarPeliculas() {
@@ -67,12 +57,11 @@ function contarPeliculas() {
     (movie) => movie.checked == true
   );
 
-  if (activatedMovies.length > numeroPeliculas) {
-    return false;
-  } else {
+  if (activatedMovies.length >= 1) {
     precioEnElCine(activatedMovies);
-
-    return true;
+  } else {
+    document.getElementById("CostoPorPersona").innerText = '';
+    document.getElementById("CostoPorPlataforma").innerText = '';
   }
 }
 
@@ -84,7 +73,7 @@ function precioEnElCine(_peliculas) {
   const totalPerPerson = _peliculas.length > 0 ? pricesMovies.reduce((a, b) => a + b) : 0;
 
   const totalPorTodasLasPersonas = personasPelicula * totalPerPerson;
-  
+
   textCostoPorPersona.innerText = `El costo por persona es $${totalPerPerson}
   El costo por ${personasPelicula} personas es $${totalPorTodasLasPersonas}`;
 
@@ -101,19 +90,19 @@ function precioPorPlataforma(_peliculas) {
 
   const pricePlatafoma = streamingPlatforms.map((precio) => precio.precio);
   const totalPlataforma = pricePlatafoma.reduce((a, b) => a + b);
-  let textPlatform="";
-  const precioPorPersona= totalPlataforma/personasPelicula;
+  let textPlatform = "";
+  const precioPorPersona = totalPlataforma / personasPelicula;
   streamingPlatforms.forEach(element => {
-    textPlatform+= `${element.nombre} por $${element.precio} al mes
+    textPlatform += `${element.nombre} por $${element.precio} al mes
     `
-    
+
   });
-  
-  textCostoPorPlataforma.innerText = `para ver tus ${numeroPeliculas} peliculas necesitas contratar:
+
+  textCostoPorPlataforma.innerText = `para ver tus ${_peliculas.length} peliculas necesitas contratar:
 
   ${textPlatform}
   el total al mes es de: $${totalPlataforma}
   entre ${personasPelicula} personas
   cada persona pagaria: $${precioPorPersona}`;
-  
-  }
+
+}
