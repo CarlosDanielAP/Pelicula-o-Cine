@@ -83,8 +83,9 @@ function precioEnElCine(_peliculas) {
 
   const totalPorTodasLasPersonas = personasPelicula * totalPerPerson;
 
-  textCostoPorPersona.innerText = `El costo por persona es $${totalPerPerson}
-  El costo por ${personasPelicula} personas es $${totalPorTodasLasPersonas}`;
+  textCostoPorPersona.innerText = `Para ver tus ${_peliculas.length} peliculas en el cine:
+  El costo por persona es de: $${totalPerPerson}
+  El costo por ${personasPelicula} personas es de: $${totalPorTodasLasPersonas}`;
 
   precioPorPlataforma(selectedMovies);
 }
@@ -107,11 +108,11 @@ function precioPorPlataforma(_peliculas) {
 
   });
 
-  textCostoPorPlataforma.innerText = `para ver tus ${_peliculas.length} peliculas necesitas contratar:
+  textCostoPorPlataforma.innerText = `Para ver tus ${_peliculas.length} peliculas en tu casa necesitas contratar:
 
   ${textPlatform}
-  el total al mes es de: $${totalPlataforma}
-  entre ${personasPelicula} personas
-  cada persona pagaria: $${precioPorPersona}`;
+  El total al mes es de: $${totalPlataforma}
+  Entre ${personasPelicula} personas
+  Cada persona pagaria: $${precioPorPersona}`;
 
 }

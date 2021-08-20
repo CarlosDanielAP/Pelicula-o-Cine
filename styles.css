@@ -6,12 +6,8 @@
 }
 
 .Peliculas__container{
-    transition: 450ms -webkit-transform;
-    transition: 450ms transform;
-    transition: 450ms transform, 450ms -webkit-transform;
-    font-size: 0;
+    
     white-space: nowrap;
-    margin: 70px 0px;
     padding-bottom: 10px;
 }
 
@@ -25,14 +21,48 @@
     margin-right: 10px;
     font-size: 20px;
     cursor: pointer;
-    transition: 450ms all;
-    -webkit-transform-origin: center left;
-            transform-origin: center left;
+   
   }
 
 .Peliculas-item__img {
     width: 200px;
     height: 250px;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
+.Costos{
+
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    
+}
+
+.Costos-Casa{
+    padding-left: 20px;
+    width: 350px;
+    height: 250px;
+    vertical-align: top;
+    display: inline-block;
+    background-color: cyan;
+    
+}
+.Costos-Cine{
+    padding-left: 20px;
+    width: 350px;
+    height: 250px;
+    vertical-align: top;
+    display: inline-block;
+    background-color: darksalmon;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .Costos{
+        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+}

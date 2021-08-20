@@ -77,14 +77,28 @@
 
         <h2>Cuantas Personas contandote a ti van a ver la pelicula?</h2>
         <input id="PersonasPorPelicula" min="1" value="1" type="number">
-        <button type="button" onclick="guardarPelicula()">Elegir peliculas</button>
+        <button type="button" onclick="guardarPelicula()">Calcular</button>
     </section>
 
 
 
-    <section id="costos">
-        <p id="CostoPorPersona"></p>
-        <p id="CostoPorPlataforma"></p>
+    <section class="Costos" id="costos">
+       
+
+        <div class="Costos-Casa">
+            <h2>Casa</h2>
+            <div class="Costos_Text">
+                <p id="CostoPorPlataforma"></p>
+            </div>
+        </div>
+        <div class="Costos-Cine">
+            <h2>Streaming</h2>
+            <div class="Costos__Text">
+                <p id="CostoPorPersona"></p>
+            </div>
+        </div>
+
+
     </section>
     <script src="/Pelicula-o-Cine/peliculas.js"></script>
 
