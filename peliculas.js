@@ -53,6 +53,7 @@ function contarPeliculas() {
     return false;
   } else {
     precioEnElCine(activatedMovies);
+
     return true;
   }
 }
@@ -64,7 +65,21 @@ function precioEnElCine(_peliculas) {
   const pricesMovies = selectedMovies.map((precio) => precio.precio);
   const totalPerPerson =
     _peliculas.length > 0 ? pricesMovies.reduce((a, b) => a + b) : 0;
+
   const totalPorTodasLasPersonas = personasPelicula * totalPerPerson;
   textCostoPorPersona.innerText = `el costo por persona es ${totalPerPerson}
   el costo por ${personasPelicula} personas es ${totalPorTodasLasPersonas}`;
+
+  precioPorPlataforma(selectedMovies);
+}
+
+function precioPorPlataforma(_peliculas) {
+  const streamingPlatforms = [];
+  _peliculas.map((pelicula) => {
+    if (!streamingPlatforms.includes(pelicula.plataforma)) {
+      streamingPlatforms.push(pelicula.plataforma);
+    }
+  });
+
+  console.log(streamingPlatforms);
 }
