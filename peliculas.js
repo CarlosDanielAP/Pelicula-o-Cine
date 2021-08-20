@@ -108,7 +108,7 @@ function precioPorPlataforma(_peliculas) {
 
   });
 
-  textCostoPorPlataforma.innerText = `Para ver tus ${_peliculas.length} peliculas en tu casa necesitas contratar:
+  textCostoPorPlataforma.innerText = `Para ver tus ${_peliculas.length} peliculas necesitas contratar:
 
   ${textPlatform}
   El total al mes es de: $${totalPlataforma}
